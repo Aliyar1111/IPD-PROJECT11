@@ -1,0 +1,221 @@
+header{
+  margin-bottom:50px ;
+}
+/* Full Page Background */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg') no-repeat center center/cover;
+}
+
+/* Centered Reservation Form */
+.form-container {
+    position: relative;
+    background: linear-gradient(var(--a), var(--c1), var(--c2));
+    animation: gradientShift 5s infinite linear;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    
+    /* 2px Animated Border */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.form-container::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, red, blue, gold);
+    background-size: 300% 100%;
+    z-index: -1;
+    animation: borderMove 5s linear infinite;
+}
+
+/* Form Styling */
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all items */
+    gap: 15px;
+}
+
+.reservation-form input,
+.reservation-form button {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    outline: none;
+}
+
+/* Button Styling */
+.reservation-form button {
+    background: #00425c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.s ease;
+}
+
+.reservation-form button:hover {
+    background: white;
+    color: #00425c;
+    border: 1px solid #00425c;
+}
+
+/* Live Gradient Animation */
+@property --a {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+@property --c1 {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #000000;
+}
+@property --c2 {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #ffffff;
+}
+
+@keyframes gradientShift {
+    0% {
+        --a: 0deg;
+        --c1: #000000;
+        --c2: #ffffff;
+    }
+    50% {
+        --a: 180deg;
+        --c1: #333333;
+        --c2: #dddddd;
+    }
+    100% {
+        --a: 360deg;
+        --c1: #000000;
+        --c2: #ffffff;
+    }
+}
+
+/* Infinite Linear Border Animation */
+@keyframes borderMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+  html {
+    --s: 80px;
+    --_g: #0000, var(--c1) 2deg calc(var(--a) - 2deg),#0000 var(--a);
+    background: 
+      conic-gradient(from calc(-45deg  - var(--a)/2) at top    var(--p) left  var(--p),var(--_g)),
+      conic-gradient(from calc(-45deg  - var(--a)/2) at top    var(--p) left  var(--p),var(--_g)),
+      conic-gradient(from calc( 45deg  - var(--a)/2) at top    var(--p) right var(--p),var(--_g)),
+      conic-gradient(from calc( 45deg  - var(--a)/2) at top    var(--p) right var(--p),var(--_g)),
+      conic-gradient(from calc(-135deg - var(--a)/2) at bottom var(--p) left  var(--p),var(--_g)),
+      conic-gradient(from calc(-135deg - var(--a)/2) at bottom var(--p) left  var(--p),var(--_g)),
+      conic-gradient(from calc( 135deg - var(--a)/2) at bottom var(--p) right var(--p),var(--_g)),
+      conic-gradient(from calc( 135deg - var(--a)/2) at bottom var(--p) right var(--p),var(--_g))
+      var(--c2);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
+    animation: m 5s infinite alternate linear;
+  }
+  
+  @keyframes m {
+    0%,15% {
+      --a: 135deg;
+      --p: 20%;
+      --c1: #000000;
+      --c2: #ffffff;
+      background-position: 0 0,var(--s) var(--s);
+    }
+    45%,50% {
+      --a: 90deg;
+      --p: 25%;
+      --c1: #000000;
+      --c2: #ffffff;
+      background-position: 0 0,var(--s) var(--s);
+    }
+    50.01%,55% {
+      --a: 90deg;
+      --p: 25%;
+      --c2: #000000;
+      --c1: #ffffff;
+      background-position: var(--s) 0,0 var(--s);
+    }
+    85%,100% {
+      --a: 135deg;
+      --p: 20%;
+      --c2: #000000;
+      --c1: #ffffff;
+      background-position: var(--s) 0,0 var(--s);
+    }
+  }
+  /* Footer Styling */
+.footer {
+  background: black;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Footer Columns */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Footer Column Styling */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.footer-column a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-column a:hover {
+  color: #f39c12;
+}
+
+/* Bottom Footer */
+.footer-bottom {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+  font-size: 14px;
+}
+
+
+  
